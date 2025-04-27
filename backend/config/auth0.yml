@@ -1,0 +1,4 @@
+development:
+  auth0_domain: { shikigami.jp.auth0.com }
+  auth0_client_id: { ClJNVjr9ygLUdRbntfi644p5hSVc6Ngd }
+  auth0_client_secret: b5LXCnj1luohuwpAI6HN06ecTcF3tbtExFaaNdxTl_ErbNLu4vWur60BGuu-Kj1c
