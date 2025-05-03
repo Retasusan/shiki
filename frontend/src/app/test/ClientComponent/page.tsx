@@ -3,17 +3,19 @@
 import { useQuery } from "@tanstack/react-query";
 
 export default function ClientComponent({ token }: { token?: string }) {
-  console.log(token);
   const { data, isPending, error } = useQuery({
     queryKey: ["get"],
     queryFn: async () => {
       if (!token) throw new Error("No token found");
 
-      const res = await fetch(`${process.env.APP_BASE_URL}/verify_token`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/verify_token`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       if (!res.ok) {
         throw new Error("Network response was not ok");
