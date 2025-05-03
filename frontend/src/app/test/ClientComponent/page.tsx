@@ -9,7 +9,7 @@ export default function ClientComponent({ token }: { token?: string }) {
     queryFn: async () => {
       if (!token) throw new Error("No token found");
 
-      const res = await fetch("http://localhost:8000/verify_token", {
+      const res = await fetch(`${process.env.APP_BASE_URL}/verify_token`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
